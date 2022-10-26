@@ -2,7 +2,7 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/GEMEMDB`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+Гем для помощи студентам в работе с конечными автоматами и регулярными выражениями
 
 ## Installation
 
@@ -16,7 +16,25 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+reg_fm('Some regular expression') строит конечный автомат из регулярного выражения в формате:
+[[{"..." => 1}], [{"..." => 2}], []],
+где номер элемента массива это номер состояния
+
+matrixToEquation(param, perem, matrix)
+Функция Перехода из конечного автомата в регулярное выражение
+На вход подается 2 массива с состояниями и переменными, матрица переходов, на выход регулярное выражение
+              param =  ['0', '1']
+perem =  ['Se', Matrix[['D', 'S'],
+          'De',        ['D', 'P'],
+          'Pe',        ['0', 'Q'],
+          'Qe']        ['Q', 'Q']]
+
+equationToSolution(perem, equation)
+Функция решения системы уравнений с регулярными коэффициентами
+На вход подается массив с состояниями, матрица переходов, на выход регулярное выражение
+  perem =  ['Ae',   equation = ["0B+1A+e",
+            'B',                "0C+1B",
+            "C"]                "0A+1C"]
 
 ## Development
 
