@@ -121,7 +121,7 @@ module GEMEMDB
     end
 
     # Сортировка уравнения к виду (x1 = x1 + x2 + ... + xn, x2 = x2 + x1 + ... + xn, ... , xn = xn + x1 + x2 + ... + xn-1)
-    private def sortEquation(perem, equation)
+    def sortEquation(perem, equation)
       # Сортировка уравнения
       newEquation = Array.new(perem.count) {''}
       z = Hash.new()
@@ -162,7 +162,7 @@ module GEMEMDB
     end
 
     # Поиск решения каждого из уравнений
-    private def equationToPredSolution(perem, equation)
+    def equationToPredSolution(perem, equation)
       h = Hash.new()
       # Приведение к решению уравнения
       (0..perem.count-1).to_a.each do |i|
@@ -208,7 +208,7 @@ module GEMEMDB
     end
 
     # Приведение отдельной строки к решению
-    private def stringToPredSolution(perem, str)
+    def stringToPredSolution(perem, str)
       # Приведение к решению уравнения
       if str.include? perem
         help = str.split('+')
